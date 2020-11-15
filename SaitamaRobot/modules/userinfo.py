@@ -22,7 +22,6 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.modules.sql.global_bans_sql import is_user_gbanned
 from SaitamaRobot.modules.sql.afk_sql import is_afk, check_afk_status
 from SaitamaRobot.modules.sql.users_sql import get_user_num_chats
-from SaitamaRobot.modules.sql.feds_sql import get_user_fbanlist
 from SaitamaRobot.modules.helper_funcs.chat_status import sudo_plus
 from SaitamaRobot.modules.helper_funcs.extraction import extract_user
 from SaitamaRobot import telethn as SaitamaTelethonClient, TIGERS, DRAGONS, DEMONS
@@ -127,7 +126,7 @@ def get_id(update: Update, context: CallbackContext):
             user2 = message.reply_to_message.forward_from
 
             msg.reply_text(
-                f"<b>Telegram ID:</b>,"
+                f"<b>Telegram ID:</b>\n"
                 f"• {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
                 f"• {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
                 parse_mode=ParseMode.HTML)
